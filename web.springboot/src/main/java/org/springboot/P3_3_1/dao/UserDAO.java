@@ -7,12 +7,15 @@ import java.util.List;
 public interface UserDAO {
     void addUser(User user);
 
-    User findUser(int id);
+    //User findUser(int id);
 
     void editUserById (User user);
 
     void removeUserById(int id);
 
-    List<User> getAllUsers();
+    List<User> readingAllUser();
 
+
+
+    User readUser(int id);
 }

@@ -22,11 +22,11 @@ public class UserDAOImpl implements UserDAO {
     public void addUser(User user) {
         em.persist(user);
     }
-
     @Override
-    public User findUser(int id) {
+    public User readUser(int id) {
         return em.find(User.class, id);
     }
+
 
     @Override
     public void editUserById(User user) {
@@ -40,7 +40,10 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public List<User> getAllUsers() {
+    public List<User> readingAllUser() {
         return em.createQuery("from User", User.class).getResultList();
     }
+
+
+
 }

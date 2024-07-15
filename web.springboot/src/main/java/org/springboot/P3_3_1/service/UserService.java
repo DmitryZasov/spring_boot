@@ -10,11 +10,11 @@ import java.util.List;
 public interface UserService {
     void addUser(User user);
 
-    User findUser(int id);
+    User readUser(int id);
 
     void editUserById (User user);
 
     void removeUserById(int id);
 
-    List<User> getAllUsers();
+    List<User> readingAllUsers();
 }

@@ -23,19 +23,19 @@ public class UserController {
     }
 
     @GetMapping()
-    public String index(Model model) {
-        model.addAttribute("users", userService.getAllUsers());
+    public String getIndex(Model model) {
+        model.addAttribute("users", userService.readingAllUsers());
         return "users";
     }
 
     @GetMapping("/show")
-    public String userById(@RequestParam("id") int id, Model model) {
-        model.addAttribute("user", userService.findUser(id));
+    public String getUserById(@RequestParam("id") int id, Model model) {
+        model.addAttribute("user", userService.readUser(id));
         return "userID";
     }
 
     @GetMapping("/new")
-    public String newUser(Model model) {
+    public String addNewUser(Model model) {
         model.addAttribute("user", new User());
         return "new";
     }
@@ -52,7 +52,7 @@ public class UserController {
 
     @GetMapping("/edit")
     public String editUserById(@RequestParam("id") int id, Model model) {
-        model.addAttribute("user", userService.findUser(id));
+        model.addAttribute("user", userService.readUser(id));
         return "edit";
     }
 
